@@ -1,0 +1,34 @@
+Subject: RE: Make Your Mid-Year Check-In Count
+
+Hi Anoop,
+
+Thanks for the push — fair point that my list read as activities rather than achievements. Here is each item expanded along the lines Rachel suggested (impact, growth, learning):
+
+1) IICRA RSR in R model release
+
+What I achieved: As a key stakeholder, I worked with multiple teams throughout the whole process to bring the full stack to release quality — the front-end UI, the middle data utility layer, and the back-end engine — as well as designing all required testing. This work directly supports the company-wide digitization initiative: it embeds the IICRA assessment into our workflow system and digitizes the underlying data, replacing manual, document-based processes with a governed, reproducible platform.
+
+Impact for the company: Insurance analysts now have IICRA integrated into the workflow system with digitized data — improving consistency, auditability, and efficiency of the assessment process, and advancing Ratings' broader workflow digitization agenda.
+
+Growth/learning: Leading a multi-team release materially strengthened my project and time management skills — coordinating dependencies, timelines, and stakeholders across groups. On the technical side, working hands-on across all three layers (UI, data utility, engine) plus test design meaningfully advanced my R development skills beyond pure quantitative modeling into full application delivery.
+
+2) Inaugural GARM AI training material — "Prompt Mystery" published
+
+What I achieved: I took the initiative to author and publish the group's first AI training material, directly supporting AI adoption — the firm's biggest strategic initiative this year. The material is tailored to our analyst populations — Model SMEs, Criteria SMEs, and CAOs — and goes well beyond generic prompting advice: the modules are built around our actual analytical workflows, covering structured multi-step prompting techniques, code generation anchored to our methodology language, techniques for challenging AI-generated conclusions, and a governance module on how prompts should be documented, shared, and audited as an institutional GAM standard.
+
+Impact for the company: This converts the firm's AI ambition into methodology-aligned, auditable analytical practice for GAM. It gives the group a common foundation and vocabulary for AI-assisted work rather than leaving adoption ad hoc, and positions GAM as an early leader within Ratings on responsible, governed AI use.
+
+Growth/learning: Creating training for others required me to move from personal AI productivity to designing standards and pedagogy that scale across the group — a leadership skill in itself — and it has established me as a visible contributor to the group's AI direction.
+
+3) Cross-sector collaboration — review of corporate CATS library, headroom tool, and government CREST tool
+
+What I achieved: I contributed methodology and model-governance leadership centered on both the FI and Insurance rating methodologies to reviews of tools owned outside our sector. The deepest engagement was the corporate headroom tool, where I led an end-to-end review: tracing the implementation against the relevant criteria, independently verifying the underlying mathematics, running the model across the full testing portfolio, identifying implementation and error-handling defects, and delivering a formal written review. I then went beyond the review mandate and authored a proposal extending the framework to both the FI and Insurance rating methodologies, identifying concrete application areas with a phased implementation roadmap. The CATS library and CREST tool reviews similarly applied our model review standards across sector boundaries.
+
+Impact for the company: Cross-sector reviews strengthen consistency of model quality across Ratings, and the extension proposal converts a corporate-sector tool into new analytical capability for both the FI and Insurance sectors — collaboration producing capability, not just sign-off.
+
+Growth/learning: Working across corporate and government methodologies broadened my criteria knowledge beyond FI and Insurance, and leading reviews of unfamiliar codebases sharpened both my technical judgment and my stakeholder skills — knowing when to challenge a design and when to recognize the owner's intent.
+
+Happy to walk through any of these in more detail at the check-in.
+
+Thanks,
+Derek
