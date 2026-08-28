@@ -1,0 +1,52 @@
+fyi
+
+From: Garg, Anoop (Analytical) <anoop.garg@spglobal.com> 
+Sent: Friday, August 28, 2026 6:46 AM
+To: Narula, Saurabh (Associated) <saurabh.narula@spglobal.com>; Vallucci, Federico (Associated) <federico.vallucci2@spglobal.com>; Boyd, Debra (Associated) <debra.boyd@spglobal.com>
+Cc: Talukder, Ashit (Associated) <ashit.talukder@spglobal.com>; Vara prasad, Shiva shankara (Associated) <s.vara.prasad@spglobal.com>; Fernandez, Matt (Associated) <matt.fernandez@spglobal.com>
+Subject: RE: Access: google/gemma-4-26B-A4B 
+
+Thanks Saurabh. Much appreciated!
+
+From: Narula, Saurabh (Associated) <saurabh.narula@spglobal.com> 
+Sent: Tuesday, August 25, 2026 1:46 AM
+To: Vallucci, Federico (Associated) <federico.vallucci2@spglobal.com>; Boyd, Debra (Associated) <debra.boyd@spglobal.com>; Garg, Anoop (Analytical) <anoop.garg@spglobal.com>
+Cc: Talukder, Ashit (Associated) <ashit.talukder@spglobal.com>; Vara prasad, Shiva shankara (Associated) <s.vara.prasad@spglobal.com>; Fernandez, Matt (Associated) <matt.fernandez@spglobal.com>
+Subject: Re: Access: google/gemma-4-26B-A4B 
+
+@Garg, Anoop (Analytical) please find below details for Gemma 4 high context (with 130k limit)
+
+URL: https://google--gemma-4-26b-a4b-it-high-ctx-uat.caas-genai.dev.spratingsvpc.com/
+
+Rest everything else remains the same.
+
+Please let us know if you have any questions.
+
+Thanks,
+Saurabh
+
+From: Vallucci, Federico (Associated) <federico.vallucci2@spglobal.com>
+Date: Thursday, April 16, 2026 at 5:19 PM
+To: Boyd, Debra (Associated) <debra.boyd@spglobal.com>
+Cc: Narula, Saurabh (Associated) <saurabh.narula@spglobal.com>; Talukder, Ashit (Associated) <ashit.talukder@spglobal.com>
+Subject: Access: google/gemma-4-26B-A4B 
+Hi @Boyd, Debra (Associated),
+Here the information to access google/gemma-4-26B-A4B  deployed in lower env in kubernetes.
+
+1.	url:  https://google--gemma-4-26b-a4b-it-ssdqa.caas-genai.dev.spratingsvpc.com/
+2.	Api-key: LkR71bzGCBdWsdk5pV7rfqlCgI9oY2oH
+
+Here an example on how to invoke from curl command:
+
+curl https://google--gemma-4-26b-a4b-it-ssdqa.caas-genai.dev.spratingsvpc.com/v1/chat/completions \
+        -H 'accept: application/json' \
+        -H 'Authorization: Bearer LkR71bzGCBdWsdk5pV7rfqlCgI9oY2oH' \
+        -H 'Content-Type: application/json' \
+        --data '{"model": "google/gemma-4-26B-A4B-it", "messages": [{"role": "user","content": "what is the capital of Australia?"}]}'
+
+Please note we are using this vllm docker image vllm/vllm-openai:gemma4  to host it in a g5.12xlarge machine. 
+
+Let me know if you have any question
+Federico
+
+
