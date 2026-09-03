@@ -1,0 +1,1 @@
+ok, i have IICRA project with 3 packages , UI, data util and engine, i am doing azure ADO manual pipeline build, data util and engine all passed, however, i am getting error message of "code: 24, "error": "the requested operation requires authentication, 'payload', null}, and the error is after message of job completed, launching shiny application...iicra installed!
