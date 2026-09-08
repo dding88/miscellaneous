@@ -1,0 +1,26 @@
+New IDF data	Current API	in new IDF data	Equivalent / Comment
+Credit Assessment	Senior	No	Not present by itself
+Senior Unsecured	Senior Non Preferred	No	Not present
+Preferred Stock Convertible	Senior Preferred	No	Not present
+Preferred Stock	Third Lien	No	Not present
+Short-Term Debt	Third Mortgage	No	Not present
+Subordinated	Unsecured	No	Not present by itself
+Secured Subordinated Debt	Junior	No	Not present by itself
+Municipal Debt	Junior Subordinate	Maybe	Junior Subordinated
+Junior Subordinated	Not Ranked	No	Not present
+Senior Subordinated	Preferred	Maybe	Preferred Stock / Preference Stock
+Short-Term Secured Debt	Second Lien	No	Not present
+Preference Stock	Senior Subordinate	Maybe	Senior Subordinated
+Equipment Trust Certificates	Senior Secured	Yes	Exact match
+Senior Secured	Senior Unsecured	Yes	Exact match
+Credit Estimate	Subordinate	Maybe	Subordinated
+Certificate Of Deposit			
+Resolution Counterparty Liability			
+Municipal ICR			
+Commercial Paper			
+Short Term Rating Indication			
+Blue Cross Blue Shield			
+Senior Lien			
+Long Term Rating Indication			
+Permanent Interest Bearing Shares			
+Swap Risk			
