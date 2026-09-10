@@ -1,0 +1,43 @@
+from pydantic import BaseModel, Field
+from pydantic_ai import Agent
+from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.providers.openai import OpenAIProvider
+from pydantic_ai.settings import ModelSettings
+
+class ResponseSchema(BaseModel):
+    answer: str = Field(description="The answer to the user's question")
+    confidence: float = Field(description="Confidence score between 0 and 1")
+
+def main():
+    gemma_url = "https://google--gemma-4-26b-a4b-it-ssdqa.caas-genai.dev.spratingsvpc.com/v1"
+    #gemma_url = "https://google--gemma-4-26b-a4b-it-high-ctx-uat.caas-genai.dev.spratingsvpc.com/v1"
+    
+    # 1. Configure the custom endpoint provider
+    custom_provider = OpenAIProvider(base_url=gemma_url)
+
+    # 2. Instantiate the model tied to the provider
+    model = OpenAIChatModel(
+        'google/gemma-4-26B-A4B-it', 
+        provider=custom_provider
+    )
+
+    # 3. Use it in your agent with a structured result type
+    agent = Agent(
+        model=model,
+        output_type=ResponseSchema,
+        system_prompt="You are a helpful assistant."
+    )
+
+    # Run the agent
+    result = agent.run_sync("What is the capital of USA?")
+    response: ResponseSchema = result.output  # This will be an instance of ResponseSchema
+
+    # Access the validated Pydantic model
+    print(f"Answer: {response.answer}")
+    print(f"Confidence: {response.confidence}")
+    import json
+    print(json.dumps(result.new_messages_json().decode(), indent=2))
+
+
+if __name__ == "__main__":
+    main()
