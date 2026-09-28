@@ -1,0 +1,40 @@
+─ Preparing for deployment ────────────────────────────────────────────────────
+ℹ This is rsconnect 1.11.0
+✔ Re-deploying "iicra-rsr-ui-uat" using "server: rscm.ss.use1.nonprod.rtg.awsspgi / username: derek_ding"
+ℹ Looking up content with id "23"...
+✔ Found content <https://rscm.ss.use1.nonprod.rtg.awsspgi/content/880a9238-74ee-4020-a02d-8d7f5a430746/>
+ℹ Bundling 11 files: 'app.R', 'azure-pipelines.yml', 'config.yml', 'global.R', 'globalData.R', 'okta_oauth_security.R', 'pipeline/deploy-config.yml', 'pipeline/deploy.R', 'readiness.R', 'server.R', and 'ui.R'
+ℹ Capturing R dependencies
+The following package(s) have unsatisfied dependencies:
+- devtools requires pak (>= 0.9.5), but version 0.4.0 is installed
+Consider updating the required dependencies as appropriate.
+
+The following package(s) were installed from an unknown source:
+- cats          [4.8.0]
+- IICRADataUtil [0.18.0]
+renv may be unable to restore these packages in the future.
+Consider reinstalling these packages from a known source (e.g. CRAN).
+
+Error in `snapshotRenvDependencies()`:
+! Failed to snapshot dependencies with renv.
+ℹ For example, you have a locally-developed package that is installed from
+  disk.
+Caused by error:
+! aborting snapshot due to pre-flight validation failure
+- unsatisfied dependencies: pak
+- packages installed from an unknown source: IICRADataUtil, cats
+Backtrace:
+     ▆
+  1. └─rsconnect::deployApp(...)
+  2.   └─rsconnect:::bundleApp(...)
+  3.     └─rsconnect:::createAppManifest(...)
+  4.       └─rsconnect:::bundlePackages(...)
+  5.         └─rsconnect:::computePackageDependencies(...)
+  6.           └─rsconnect:::snapshotRenvDependencies(bundleDir, extraPackages, quiet = quiet, verbose = verbose)
+  7.             └─base::tryCatch(...)
+  8.               └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+  9.                 └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 10.                   └─value[[3L]](cond)
+ 11.                     └─cli::cli_abort(...)
+ 12.                       └─rlang::abort(...)
+Execution halted
