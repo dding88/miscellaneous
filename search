@@ -1,0 +1,3 @@
+list.files("/shared_repo/4.2.2/src/contrib", pattern = "IICRA|cats")
+ap <- available.packages(repos = "file:///shared_repo/4.2.2")
+ap[rownames(ap) %in% c("IICRADataUtil", "IICRAEngine", "cats"), "Version"]
