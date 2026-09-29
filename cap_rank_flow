@@ -1,0 +1,24 @@
+It's the only query that's fully visible in the repo, and it never touches Secrets Manager.
+
+Step 1: Excel sends the request.
+The model sends column H (Capital Rank) in the request as Capital_Rank. It also sends the mapping table from 'Input QA'!C2:D22, which translates CapIQ labels to short names (e.g. Senior Unsecured → Sr Unsecured).
+
+Step 2: The API finds the CapIQ security ID.
+odata_api.py queries CIQFIs using each holding's ISIN, CUSIP or SEDOL, and gets back a CapIQ securityId.
+
+Step 3: The API pulls the security level.
+It then queries CIQFICaches with those securityIds and gets back CIQSecurityLevel.
+
+Step 4: The API maps it to a capital rank.
+The CapIQ label is translated using the table Excel sent in Step 1. If a label isn't in the table, the raw CapIQ value is kept. The result is stored as DST_OData_API_Mapped_Capital_Rank.
+
+Step 5: The API picks which value to use.
+
+If the user filled in column H, that value is used.
+If column H is blank, the CapIQ value is used.
+If neither exists, the value is left empty.
+
+The chosen value is Selected_Capital_Rank_Calc_Input.
+
+Step 6: Notching uses it.
+notching.py uses the chosen capital rank to set Haircut Notches. This only matters when a security has no issue rating and falls back to the issuer rating. The notched rating then comes back to Excel in columns AK/AL.
