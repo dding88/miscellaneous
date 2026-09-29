@@ -1,0 +1,112 @@
+2026-09-29T02:40:44.0621701Z ##[debug]Evaluating condition for step: 'Deploy iicra-ui package'
+2026-09-29T02:40:44.0622862Z ##[debug]Evaluating: SucceededNode()
+2026-09-29T02:40:44.0623317Z ##[debug]Evaluating SucceededNode:
+2026-09-29T02:40:44.0623863Z ##[debug]=> True
+2026-09-29T02:40:44.0624355Z ##[debug]Result: True
+2026-09-29T02:40:44.0624771Z ##[section]Starting: Deploy iicra-ui package
+2026-09-29T02:40:44.0631065Z ==============================================================================
+2026-09-29T02:40:44.0631237Z Task         : Bash
+2026-09-29T02:40:44.0631317Z Description  : Run a Bash script on macOS, Linux, or Windows
+2026-09-29T02:40:44.0631451Z Version      : 3.279.0
+2026-09-29T02:40:44.0631540Z Author       : Microsoft Corporation
+2026-09-29T02:40:44.0631650Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2026-09-29T02:40:44.0631795Z ==============================================================================
+2026-09-29T02:40:44.2042420Z ##[debug]Using node path: /local/apps/ado-agent1/externals/node20_1/bin/node
+2026-09-29T02:40:44.2358562Z ##[debug]system.debug=True
+2026-09-29T02:40:44.2359402Z ##[debug]DistributedTask.Tasks.Node.SkipDebugLogsWhenDebugModeOff=True
+2026-09-29T02:40:44.2397960Z ##[debug]agent.TempDirectory=/local/apps/ado-agent1/_work/_temp
+2026-09-29T02:40:44.2399550Z ##[debug]loading inputs and endpoints
+2026-09-29T02:40:44.2404681Z ##[debug]loading INPUT_TARGETTYPE
+2026-09-29T02:40:44.2414059Z ##[debug]loading INPUT_FILEPATH
+2026-09-29T02:40:44.2417916Z ##[debug]loading INPUT_SCRIPT
+2026-09-29T02:40:44.2419313Z ##[debug]loading INPUT_WORKINGDIRECTORY
+2026-09-29T02:40:44.2419767Z ##[debug]loading INPUT_FAILONSTDERR
+2026-09-29T02:40:44.2420214Z ##[debug]loading ENDPOINT_AUTH_SYSTEMVSSCONNECTION
+2026-09-29T02:40:44.2420768Z ##[debug]loading ENDPOINT_AUTH_SCHEME_SYSTEMVSSCONNECTION
+2026-09-29T02:40:44.2422191Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN
+2026-09-29T02:40:44.2422750Z ##[debug]loading SECRET_SYSTEM_ACCESSTOKEN
+2026-09-29T02:40:44.2423530Z ##[debug]loaded 9
+2026-09-29T02:40:44.2425787Z ##[debug]Agent.ProxyUrl=undefined
+2026-09-29T02:40:44.2426228Z ##[debug]Agent.CAInfo=undefined
+2026-09-29T02:40:44.2426695Z ##[debug]Agent.ClientCert=undefined
+2026-09-29T02:40:44.2428286Z ##[debug]Agent.SkipCertValidation=undefined
+2026-09-29T02:40:44.2442633Z ##[debug]check path : /local/apps/ado-agent1/_work/_tasks/Bash_6c731c3c-3c68-459a-a5c9-bde6e6595b5b/3.279.0/task.json
+2026-09-29T02:40:44.2444133Z ##[debug]adding resource file: /local/apps/ado-agent1/_work/_tasks/Bash_6c731c3c-3c68-459a-a5c9-bde6e6595b5b/3.279.0/task.json
+2026-09-29T02:40:44.2444702Z ##[debug]system.culture=en-US
+2026-09-29T02:40:44.2451616Z ##[debug]failOnStderr=false
+2026-09-29T02:40:44.2452328Z ##[debug]workingDirectory=/local/apps/ado-agent1/_work/46/s
+2026-09-29T02:40:44.2452868Z ##[debug]check path : /local/apps/ado-agent1/_work/46/s
+2026-09-29T02:40:44.2453592Z ##[debug]targetType=inline
+2026-09-29T02:40:44.2454026Z ##[debug]bashEnvValue=undefined
+2026-09-29T02:40:44.2454771Z ##[debug]script=echo "Deploy R package"
+echo "R Version  = 4.2.2"
+echo "MiniCRAN root = /shared_repo"
+echo "Apps root = /local/apps"
+export RSTUDIO_PANDOC=${pandoc_path}
+export PATH=/opt/R/4.2.2/bin:$PATH
+echo "Path = $PATH"
+export MINICRANDIR=/shared_repo/4.2.2
+echo "MINICRANDIR = $MINICRANDIR"
+Rscript pipeline/deploy.R
+2026-09-29T02:40:44.2470037Z Generating script.
+2026-09-29T02:40:44.2474499Z ##[debug]which 'bash'
+2026-09-29T02:40:44.2479033Z ##[debug]found: '/usr/bin/bash'
+2026-09-29T02:40:44.2480114Z ##[debug]Agent.Version=4.255.0
+2026-09-29T02:40:44.2480599Z ##[debug]Detected Agent.Version=4.255.0
+2026-09-29T02:40:44.2481114Z ##[debug]agent.tempDirectory=/local/apps/ado-agent1/_work/_temp
+2026-09-29T02:40:44.2481628Z ##[debug]check path : /local/apps/ado-agent1/_work/_temp
+2026-09-29T02:40:44.2482008Z ========================== Starting Command Output ===========================
+2026-09-29T02:40:44.2482437Z ##[debug]which '/usr/bin/bash'
+2026-09-29T02:40:44.2482881Z ##[debug]found: '/usr/bin/bash'
+2026-09-29T02:40:44.2483985Z ##[debug]/usr/bin/bash arg: /local/apps/ado-agent1/_work/_temp/ce562443-6fa9-4206-97af-04b85683cafa.sh
+2026-09-29T02:40:44.2484472Z ##[debug]exec tool: /usr/bin/bash
+2026-09-29T02:40:44.2484893Z ##[debug]arguments:
+2026-09-29T02:40:44.2485473Z ##[debug]   /local/apps/ado-agent1/_work/_temp/ce562443-6fa9-4206-97af-04b85683cafa.sh
+2026-09-29T02:40:44.2485993Z [command]/usr/bin/bash /local/apps/ado-agent1/_work/_temp/ce562443-6fa9-4206-97af-04b85683cafa.sh
+2026-09-29T02:40:44.2517129Z Deploy R package
+2026-09-29T02:40:44.2517550Z R Version  = 4.2.2
+2026-09-29T02:40:44.2517810Z MiniCRAN root = /shared_repo
+2026-09-29T02:40:44.2518076Z Apps root = /local/apps
+2026-09-29T02:40:44.2518620Z Path = /opt/R/4.2.2/bin:/local/apps/.juliaup/bin:/local/apps/python/3.12.11/bin:/usr/bin:/home/rscdeploy/.local/bin:/home/rscdeploy/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/rscdeploy/.juliaup/bin:/home/rscdeploy/.juliaup/bin:/home/rscdeploy/.juliaup/bin:/home/rscdeploy/.juliaup/bin
+2026-09-29T02:40:44.2519177Z MINICRANDIR = /shared_repo/4.2.2
+2026-09-29T02:40:45.0523384Z 
+2026-09-29T02:40:45.0621438Z ── RStudio Connect Artifact Deployment ─────────────────────────────────────────
+2026-09-29T02:40:45.0621802Z 
+2026-09-29T02:40:45.0622154Z Deploying iicra
+2026-09-29T02:40:45.0632567Z Defining Connect with server: https://rscmre-green.ss.use1.nonprod.rtg.awsspgi
+2026-09-29T02:40:45.3937645Z ℹ Capturing R dependencies with packrat
+2026-09-29T02:40:47.8586967Z Error in `addPackratSnapshot()`:
+2026-09-29T02:40:47.8587894Z ! Failed to snapshot dependencies
+2026-09-29T02:40:47.8588031Z Caused by error:
+2026-09-29T02:40:47.8588231Z ! Unable to retrieve package records for the following packages:
+2026-09-29T02:40:47.8588389Z - 'IICRADataUtil'
+2026-09-29T02:40:47.8588570Z Backtrace:
+2026-09-29T02:40:47.8588677Z      ▆
+2026-09-29T02:40:47.8589129Z   1. ├─spdeployr::connect_deploy(...)
+2026-09-29T02:40:47.8589403Z   2. │ └─rsconnect::writeManifest(glue("{getwd()}/{config$artifact_dir}"))
+2026-09-29T02:40:47.8589764Z   3. │   └─rsconnect:::createAppManifest(...)
+2026-09-29T02:40:47.8590011Z   4. │     └─rsconnect:::bundlePackages(...)
+2026-09-29T02:40:47.8590220Z   5. │       └─rsconnect:::computePackageDependencies(...)
+2026-09-29T02:40:47.8590453Z   6. │         └─rsconnect:::snapshotPackratDependencies(...)
+2026-09-29T02:40:47.8590716Z   7. │           └─rsconnect:::addPackratSnapshot(bundleDir, implicit_dependencies, verbose = verbose)
+2026-09-29T02:40:47.8590932Z   8. │             ├─base::withCallingHandlers(...)
+2026-09-29T02:40:47.8591160Z   9. │             └─rsconnect:::performPackratSnapshot(bundleDir, verbose = verbose)
+2026-09-29T02:40:47.8591365Z  10. │               ├─base::suppressMessages(...)
+2026-09-29T02:40:47.8591564Z  11. │               │ └─base::withCallingHandlers(...)
+2026-09-29T02:40:47.8591735Z  12. │               └─packrat::.snapshotImpl(...)
+2026-09-29T02:40:47.8591925Z  13. │                 └─packrat:::getPackageRecords(...)
+2026-09-29T02:40:47.8592079Z  14. │                   └─base::stop(...)
+2026-09-29T02:40:47.8592241Z  15. └─base::.handleSimpleError(...)
+2026-09-29T02:40:47.8592389Z  16.   └─rsconnect (local) h(simpleError(msg, call))
+2026-09-29T02:40:47.8592643Z  17.     └─rlang::abort("Failed to snapshot dependencies", parent = err)
+2026-09-29T02:40:47.8592861Z Warning message:
+2026-09-29T02:40:47.8593391Z replacing previous import ‘config::with_config’ by ‘httr::with_config’ when loading ‘spdeployr’ 
+2026-09-29T02:40:47.8593674Z Execution halted
+2026-09-29T02:40:47.8794567Z 
+2026-09-29T02:40:47.8799342Z ##[debug]Process exited with code 1 and signal null for tool '/usr/bin/bash'
+2026-09-29T02:40:47.8799747Z ##[debug]STDIO streams have closed and received exit code 1 and signal null for tool '/usr/bin/bash'
+2026-09-29T02:40:47.8817353Z ##[error]Bash exited with code '1'.
+2026-09-29T02:40:47.8821422Z ##[debug]Processed: ##vso[task.issue type=error;source=TaskInternal;correlationId=2291942e-d1e2-46f0-af28-9000323ad1e6;]Bash exited with code '1'.
+2026-09-29T02:40:47.8822449Z ##[debug]task result: Failed
+2026-09-29T02:40:47.8827344Z ##[debug]Processed: ##vso[task.complete result=Failed;done=true;]
+2026-09-29T02:40:47.8846444Z ##[section]Finishing: Deploy iicra-ui package
