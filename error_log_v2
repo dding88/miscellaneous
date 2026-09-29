@@ -1,0 +1,167 @@
+2026-09-29T03:06:44.8738872Z ##[debug]Evaluating condition for step: 'Deploy iicra-ui package'
+2026-09-29T03:06:44.8739937Z ##[debug]Evaluating: SucceededNode()
+2026-09-29T03:06:44.8740188Z ##[debug]Evaluating SucceededNode:
+2026-09-29T03:06:44.8740624Z ##[debug]=> True
+2026-09-29T03:06:44.8740937Z ##[debug]Result: True
+2026-09-29T03:06:44.8741321Z ##[section]Starting: Deploy iicra-ui package
+2026-09-29T03:06:44.8747977Z ==============================================================================
+2026-09-29T03:06:44.8748103Z Task         : Bash
+2026-09-29T03:06:44.8748164Z Description  : Run a Bash script on macOS, Linux, or Windows
+2026-09-29T03:06:44.8748258Z Version      : 3.279.0
+2026-09-29T03:06:44.8748326Z Author       : Microsoft Corporation
+2026-09-29T03:06:44.8748399Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/bash
+2026-09-29T03:06:44.8748493Z ==============================================================================
+2026-09-29T03:06:45.0255219Z ##[debug]Using node path: /local/apps/ado-agent1/externals/node20_1/bin/node
+2026-09-29T03:06:45.0568747Z ##[debug]system.debug=True
+2026-09-29T03:06:45.0569721Z ##[debug]DistributedTask.Tasks.Node.SkipDebugLogsWhenDebugModeOff=True
+2026-09-29T03:06:45.0607299Z ##[debug]agent.TempDirectory=/local/apps/ado-agent1/_work/_temp
+2026-09-29T03:06:45.0608686Z ##[debug]loading inputs and endpoints
+2026-09-29T03:06:45.0612889Z ##[debug]loading INPUT_TARGETTYPE
+2026-09-29T03:06:45.0624292Z ##[debug]loading INPUT_FILEPATH
+2026-09-29T03:06:45.0628410Z ##[debug]loading INPUT_SCRIPT
+2026-09-29T03:06:45.0629192Z ##[debug]loading INPUT_WORKINGDIRECTORY
+2026-09-29T03:06:45.0629680Z ##[debug]loading INPUT_FAILONSTDERR
+2026-09-29T03:06:45.0630035Z ##[debug]loading ENDPOINT_AUTH_SYSTEMVSSCONNECTION
+2026-09-29T03:06:45.0630402Z ##[debug]loading ENDPOINT_AUTH_SCHEME_SYSTEMVSSCONNECTION
+2026-09-29T03:06:45.0630786Z ##[debug]loading ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN
+2026-09-29T03:06:45.0631767Z ##[debug]loading SECRET_SYSTEM_ACCESSTOKEN
+2026-09-29T03:06:45.0632130Z ##[debug]loaded 9
+2026-09-29T03:06:45.0638530Z ##[debug]Agent.ProxyUrl=undefined
+2026-09-29T03:06:45.0642662Z ##[debug]Agent.CAInfo=undefined
+2026-09-29T03:06:45.0643469Z ##[debug]Agent.ClientCert=undefined
+2026-09-29T03:06:45.0643861Z ##[debug]Agent.SkipCertValidation=undefined
+2026-09-29T03:06:45.0652821Z ##[debug]check path : /local/apps/ado-agent1/_work/_tasks/Bash_6c731c3c-3c68-459a-a5c9-bde6e6595b5b/3.279.0/task.json
+2026-09-29T03:06:45.0653806Z ##[debug]adding resource file: /local/apps/ado-agent1/_work/_tasks/Bash_6c731c3c-3c68-459a-a5c9-bde6e6595b5b/3.279.0/task.json
+2026-09-29T03:06:45.0654225Z ##[debug]system.culture=en-US
+2026-09-29T03:06:45.0662533Z ##[debug]failOnStderr=false
+2026-09-29T03:06:45.0664307Z ##[debug]workingDirectory=/local/apps/ado-agent1/_work/46/s
+2026-09-29T03:06:45.0664785Z ##[debug]check path : /local/apps/ado-agent1/_work/46/s
+2026-09-29T03:06:45.0665540Z ##[debug]targetType=inline
+2026-09-29T03:06:45.0665869Z ##[debug]bashEnvValue=undefined
+2026-09-29T03:06:45.0666386Z ##[debug]script=echo "Deploy R package"
+echo "R Version  = 4.2.2"
+echo "MiniCRAN root = /shared_repo"
+echo "Apps root = /local/apps"
+export RSTUDIO_PANDOC=${pandoc_path}
+export PATH=/opt/R/4.2.2/bin:$PATH
+echo "Path = $PATH"
+export MINICRANDIR=/shared_repo/4.2.2
+echo "MINICRANDIR = $MINICRANDIR"
+Rscript pipeline/deploy.R
+2026-09-29T03:06:45.0678956Z Generating script.
+2026-09-29T03:06:45.0682856Z ##[debug]which 'bash'
+2026-09-29T03:06:45.0687457Z ##[debug]found: '/usr/bin/bash'
+2026-09-29T03:06:45.0688480Z ##[debug]Agent.Version=4.255.0
+2026-09-29T03:06:45.0688842Z ##[debug]Detected Agent.Version=4.255.0
+2026-09-29T03:06:45.0689201Z ##[debug]agent.tempDirectory=/local/apps/ado-agent1/_work/_temp
+2026-09-29T03:06:45.0689581Z ##[debug]check path : /local/apps/ado-agent1/_work/_temp
+2026-09-29T03:06:45.0689871Z ========================== Starting Command Output ===========================
+2026-09-29T03:06:45.0690212Z ##[debug]which '/usr/bin/bash'
+2026-09-29T03:06:45.0690546Z ##[debug]found: '/usr/bin/bash'
+2026-09-29T03:06:45.0691246Z ##[debug]/usr/bin/bash arg: /local/apps/ado-agent1/_work/_temp/cf847ebc-f86d-430c-8b82-24cc00ff4f2b.sh
+2026-09-29T03:06:45.0691647Z ##[debug]exec tool: /usr/bin/bash
+2026-09-29T03:06:45.0692263Z ##[debug]arguments:
+2026-09-29T03:06:45.0692709Z ##[debug]   /local/apps/ado-agent1/_work/_temp/cf847ebc-f86d-430c-8b82-24cc00ff4f2b.sh
+2026-09-29T03:06:45.0693313Z [command]/usr/bin/bash /local/apps/ado-agent1/_work/_temp/cf847ebc-f86d-430c-8b82-24cc00ff4f2b.sh
+2026-09-29T03:06:45.0728221Z Deploy R package
+2026-09-29T03:06:45.0731621Z R Version  = 4.2.2
+2026-09-29T03:06:45.0732347Z MiniCRAN root = /shared_repo
+2026-09-29T03:06:45.0736742Z Apps root = /local/apps
+2026-09-29T03:06:45.0737200Z Path = /opt/R/4.2.2/bin:/local/apps/.juliaup/bin:/local/apps/python/3.12.11/bin:/usr/bin:/home/rscdeploy/.local/bin:/home/rscdeploy/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/rscdeploy/.juliaup/bin:/home/rscdeploy/.juliaup/bin:/home/rscdeploy/.juliaup/bin:/home/rscdeploy/.juliaup/bin
+2026-09-29T03:06:45.0737622Z MINICRANDIR = /shared_repo/4.2.2
+2026-09-29T03:06:45.8286890Z 
+2026-09-29T03:06:45.8382900Z ── RStudio Connect Artifact Deployment ─────────────────────────────────────────
+2026-09-29T03:06:45.8383452Z 
+2026-09-29T03:06:45.8383833Z Deploying iicra
+2026-09-29T03:06:45.8389518Z Defining Connect with server: https://rscmre-green.ss.use1.nonprod.rtg.awsspgi
+2026-09-29T03:06:46.1652127Z ℹ Capturing R dependencies with packrat
+2026-09-29T03:06:50.3812507Z ##[debug]Agent environment resources - Disk: / Available 81432.94 MB out of 102187.98 MB, Memory: Used 12487.00 MB out of 189830.00 MB, CPU: Usage 0.00%
+2026-09-29T03:06:50.5124893Z ✔ Found 204 dependencies
+2026-09-29T03:06:50.5944660Z Bundling directory (/local/apps/ado-agent1/_work/46/s/.)
+2026-09-29T03:06:50.6408004Z Getting content endpoint
+2026-09-29T03:06:50.8021197Z 
+2026-09-29T03:06:51.0305813Z Uploading bundle
+2026-09-29T03:06:55.3807528Z ##[debug]Agent environment resources - Disk: / Available 81432.94 MB out of 102187.98 MB, Memory: Used 12511.00 MB out of 189830.00 MB, CPU: Usage 0.00%
+2026-09-29T03:06:55.5198144Z Deploying bundle
+2026-09-29T03:06:56.8488555Z Building Shiny application...
+2026-09-29T03:06:56.8490014Z Bundle created with R version 4.2.2 is compatible with environment Local with R version 4.2.2 from /opt/R/4.2.2/bin/R 
+2026-09-29T03:06:56.8490423Z Bundle requested R version 4.2.2; using /opt/R/4.2.2/bin/R from Local which has version 4.2.2
+2026-09-29T03:06:56.8490606Z Performing manifest.json to packrat transformation.
+2026-09-29T03:07:00.3815604Z ##[debug]Agent environment resources - Disk: / Available 81432.94 MB out of 102187.98 MB, Memory: Used 12515.00 MB out of 189830.00 MB, CPU: Usage 0.00%
+2026-09-29T03:07:02.4904520Z 2026/09/29 03:07:01.393830460 [connect-session] Connect Session v2026.05.1
+2026-09-29T03:07:02.4905746Z 2026/09/29 03:07:01.394038795 [connect-session] Content GUID: 8b697982-3eb9-493f-a932-43c0e94ececa
+2026-09-29T03:07:02.4906763Z 2026/09/29 03:07:01.394048991 [connect-session] Content ID: 24
+2026-09-29T03:07:02.4906949Z 2026/09/29 03:07:01.394054483 [connect-session] Bundle ID: 35
+2026-09-29T03:07:02.4907149Z 2026/09/29 03:07:01.394059506 [connect-session] Job Key: M1fndkqOwUmE3bnO
+2026-09-29T03:07:02.4907360Z 2026/09/29 03:07:01.394064913 [connect-session] WARNING: Publishing with rsconnect or Publisher, upgrade for the generated manifest.json to follow version constraints best practices.
+2026-09-29T03:07:02.4907602Z 2026/09/29 03:07:01.394070579 [connect-session] For more details on version matching, see https://docs.posit.co/connect/admin/r/#r-version-matching
+2026-09-29T03:07:02.4907799Z 2026/09/29 03:07:01.417366259 arguments: /opt/R/4.2.2/bin/R --no-restore --no-save -s -f /opt/rstudio-connect/R/packrat_restore.R
+2026-09-29T03:07:02.4907933Z 2026/09/29 03:07:01.417388758 
+2026-09-29T03:07:02.4908035Z 2026/09/29 03:07:01.417457604 
+2026-09-29T03:07:02.4908198Z Job started
+2026-09-29T03:07:02.4908341Z Determining session server location ...
+2026-09-29T03:07:02.4908655Z Connecting to session server http://127.0.0.1:37907 ...
+2026-09-29T03:07:02.4909001Z Connected to session server http://127.0.0.1:37907
+2026-09-29T03:07:02.4909138Z Starting content session token refresher (interval: 12h0m0s)
+2026-09-29T03:07:02.4909303Z 2026/09/29 03:07:01.717916004 Running on host: ip-10-109-176-177.ec2.internal
+2026-09-29T03:07:02.4909537Z 2026/09/29 03:07:01.717923125 Process ID: 1461170
+2026-09-29T03:07:02.4909691Z 2026/09/29 03:07:01.726394912 Linux distribution: Red Hat Enterprise Linux release 8.10 (Ootpa)
+2026-09-29T03:07:02.4909922Z 2026/09/29 03:07:01.731503950 Running as user: uid=23179(rscdeploy) gid=46811(apps) groups=46811(apps) context=system_u:system_r:unconfined_service_t:s0
+2026-09-29T03:07:02.4910109Z 2026/09/29 03:07:01.731510302 Connect version: 2026.05.1
+2026-09-29T03:07:02.4910236Z 2026/09/29 03:07:01.731557438 LANG: en_US.UTF-8
+2026-09-29T03:07:02.4910378Z 2026/09/29 03:07:01.731559167 Working directory: /opt/rstudio-connect/mnt/app
+2026-09-29T03:07:02.4910613Z 2026/09/29 03:07:01.731577143 Using R 4.2.2
+2026-09-29T03:07:02.4914010Z 2026/09/29 03:07:01.731577527 R.home(): /opt/R/4.2.2/lib/R
+2026-09-29T03:07:02.4914334Z 2026/09/29 03:07:01.732291574 Using user agent string: 'RStudio R (4.2.2 x86_64-pc-linux-gnu x86_64 linux-gnu)' 
+2026-09-29T03:07:02.4917710Z 2026/09/29 03:07:01.732297821 Configuring packrat to use available credentials for private repository access.
+2026-09-29T03:07:02.4921663Z 2026/09/29 03:07:01.732722229 # Validating R library read / write permissions --------------------------------
+2026-09-29T03:07:02.4925682Z 2026/09/29 03:07:01.754617799 Using R library for packrat bootstrap: /opt/rstudio-connect/mnt/R/4.2.2
+2026-09-29T03:07:02.4929542Z 2026/09/29 03:07:01.757607730 # Validating managed packrat installation --------------------------------------
+2026-09-29T03:07:02.4934417Z 2026/09/29 03:07:01.757806592 Vendored packrat archive: /opt/rstudio-connect/ext/R/packrat_0.9.3.9000_f2714831f073bfbe3777186ab991c90feca8d945.tar.gz
+2026-09-29T03:07:02.4938248Z 2026/09/29 03:07:01.765801379 Vendored packrat SHA: f2714831f073bfbe3777186ab991c90feca8d945
+2026-09-29T03:07:02.4940429Z 2026/09/29 03:07:01.793776674 Managed packrat SHA:  f2714831f073bfbe3777186ab991c90feca8d945
+2026-09-29T03:07:02.4940633Z 2026/09/29 03:07:01.800060609 Managed packrat version: 0.9.3.9000
+2026-09-29T03:07:02.4940774Z 2026/09/29 03:07:01.802303633 Managed packrat is up-to-date.
+2026-09-29T03:07:02.4940932Z 2026/09/29 03:07:01.802308211 # Validating packrat cache read / write permissions ----------------------------
+2026-09-29T03:07:02.4941110Z 2026/09/29 03:07:02.081030123 Using packrat cache directory: /opt/rstudio-connect/mnt/packrat/4.2.2
+2026-09-29T03:07:02.4941400Z 2026/09/29 03:07:02.081036098 # Setting packrat options and preparing lockfile -------------------------------
+2026-09-29T03:07:02.4941582Z 2026/09/29 03:07:02.128815510 Cannot fixup package hashes: the set of package descriptions is not correct.
+2026-09-29T03:07:02.4942091Z 2026/09/29 03:07:02.132767387 # Resolving R package repositories ---------------------------------------------
+2026-09-29T03:07:02.4942262Z 2026/09/29 03:07:02.133107030 Received repositories from Connect:
+2026-09-29T03:07:02.4942401Z 2026/09/29 03:07:02.133111507 - CRAN = "file:///sandbox_repo/4.2.2%22
+2026-09-29T03:07:02.4942560Z 2026/09/29 03:07:02.133152525 - CRAN_2 = "https://packagemanager.posit.co/cran/__linux__/centos8/2026-09-18%22
+2026-09-29T03:07:02.4942720Z 2026/09/29 03:07:02.133153232 - Shared_BU = "file:///shared_repo/4.2.2%22
+2026-09-29T03:07:02.4942874Z 2026/09/29 03:07:02.191825419 Packages will be installed using the following repositories:
+2026-09-29T03:07:02.4943211Z 2026/09/29 03:07:02.191830879 - CRAN = "file:///sandbox_repo/4.2.2%22
+2026-09-29T03:07:02.4943405Z 2026/09/29 03:07:02.191875765 - CRAN_2 = "https://packagemanager.posit.co/cran/__linux__/centos8/2026-09-18%22
+2026-09-29T03:07:02.4943576Z 2026/09/29 03:07:02.191876577 - Shared_BU = "file:///shared_repo/4.2.2%22
+2026-09-29T03:07:02.4943787Z 2026/09/29 03:07:02.240781532 # Installing required R packages with `packrat::restore()` ---------------------
+2026-09-29T03:07:02.4944119Z 2026/09/29 03:07:02.288395348 Error in deserializePackages(utils::tail(df, -1)): The following package(s) appear in the lockfile more than once: , 
+2026-09-29T03:07:02.4944280Z 2026/09/29 03:07:02.288400317 
+2026-09-29T03:07:02.4944446Z 2026/09/29 03:07:02.288440902 Unable to fully restore the R packages associated with this deployment.
+2026-09-29T03:07:02.4944628Z 2026/09/29 03:07:02.288441570 Please review the preceding messages to determine which package
+2026-09-29T03:07:02.4944805Z 2026/09/29 03:07:02.288460455 encountered installation difficulty and the cause of the failure.
+2026-09-29T03:07:02.4944936Z 2026/09/29 03:07:02.288460901 
+2026-09-29T03:07:02.4945050Z Build error: process exited with code 1: exit status 1
+2026-09-29T03:07:02.4945222Z Stopped session pings to http://127.0.0.1:37907
+2026-09-29T03:07:02.4945378Z Stopping content session token refresher
+2026-09-29T03:07:02.4945508Z Error in poll_task(.) : process exited with code 1: exit status 1
+2026-09-29T03:07:02.4945629Z Calls: <Anonymous> -> %>% -> poll_task
+2026-09-29T03:07:02.4945738Z In addition: Warning messages:
+2026-09-29T03:07:02.4946165Z 1: replacing previous import ‘config::with_config’ by ‘httr::with_config’ when loading ‘spdeployr’ 
+2026-09-29T03:07:02.4946344Z 2: In packageDescription(name, lib.loc = lib_dir, encoding = "UTF-8") :
+2026-09-29T03:07:02.4946470Z   no package 'IICRAEngine' was found
+2026-09-29T03:07:02.4946608Z 3: In packageDescription(name, lib.loc = lib_dir, encoding = "UTF-8") :
+2026-09-29T03:07:02.4946727Z   no package 'cats' was found
+2026-09-29T03:07:02.4946859Z 4: In packageDescription(name, lib.loc = lib_dir, encoding = "UTF-8") :
+2026-09-29T03:07:02.4946971Z   no package 'epitools' was found
+2026-09-29T03:07:02.4947099Z 5: invalid gid value replaced by that for user 'nobody' 
+2026-09-29T03:07:02.4947214Z Execution halted
+2026-09-29T03:07:02.5151932Z 
+2026-09-29T03:07:02.5161919Z ##[debug]Process exited with code 1 and signal null for tool '/usr/bin/bash'
+2026-09-29T03:07:02.5162397Z ##[debug]STDIO streams have closed and received exit code 1 and signal null for tool '/usr/bin/bash'
+2026-09-29T03:07:02.5181335Z ##[error]Bash exited with code '1'.
+2026-09-29T03:07:02.5185569Z ##[debug]Processed: ##vso[task.issue type=error;source=TaskInternal;correlationId=9b359231-9cca-48d7-936c-c9f70d416cdb;]Bash exited with code '1'.
+2026-09-29T03:07:02.5186136Z ##[debug]task result: Failed
+2026-09-29T03:07:02.5190534Z ##[debug]Processed: ##vso[task.complete result=Failed;done=true;]
+2026-09-29T03:07:02.5203414Z ##[section]Finishing: Deploy iicra-ui package
