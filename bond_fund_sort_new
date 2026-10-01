@@ -1,0 +1,94 @@
+Option Explicit
+
+Sub sort_column(column_name As String, order As Integer)
+    
+    'column_name should be a named range cell within the desired column
+    'order should be 1 for ascending and 2 for descending
+    
+    Dim column As String
+    column = Split(Cells(1, Range(column_name).column).Address, "$")(1)
+    Worksheets("Super Matrix Portfolio-CIQ").Range("A4:AP" & 1048576).Sort key1:=Range(column & "4:" & column & 1048576), Header:=xlYes, order1:=order
+
+End Sub
+
+Sub sort_button_identifier()
+    Dim thisCaption  As String
+    thisCaption = Worksheets("Super Matrix Portfolio-CIQ").Buttons("identifier_button").Caption
+    set_all_buttons_correct_state thisCaption
+End Sub
+
+Sub sort_button_mv()
+    Dim thisCaption  As String
+    thisCaption = Worksheets("Super Matrix Portfolio-CIQ").Buttons("mv_button").Caption
+    set_all_buttons_correct_state thisCaption
+End Sub
+
+Sub sort_button_issuer()
+    Dim thisCaption  As String
+    thisCaption = Worksheets("Super Matrix Portfolio-CIQ").Buttons("issuer_button").Caption
+    set_all_buttons_correct_state thisCaption
+End Sub
+
+Sub sort_button_md()
+    Dim thisCaption  As String
+    thisCaption = Worksheets("Super Matrix Portfolio-CIQ").Buttons("md_button").Caption
+    set_all_buttons_correct_state thisCaption
+End Sub
+
+Sub sort_button_final_rating_with_maturity()
+    Dim thisCaption  As String
+    thisCaption = Worksheets("Super Matrix Portfolio-CIQ").Buttons("final_rating_with_maturity_button").Caption
+    set_all_buttons_correct_state thisCaption
+End Sub
+
+Sub set_all_buttons_correct_state(aCaption As String)
+    Dim btnNames As Variant, btnCaptions As Variant, sheetColNames As Variant
+    Dim i As Long, idx As Long
+    Dim baseCaption As String, lastChar As String
+    Dim colName As String
+    Dim ws As Worksheet
+    
+    Set ws = Worksheets("Super Matrix Portfolio-CIQ")
+    sheet_protection ws, False
+    
+    btnNames = Array("md_button", "mv_button", "identifier_button", "issuer_button", "final_rating_with_maturity_button")
+    btnCaptions = Array("Maturity Date*", "Market Value*", "Identifier*", "Issuer", "Final Rating w/ Maturity")
+    sheetColNames = Array("maturity_date", "market_value", "identifier", "issuer", "main_final_rating_api_column")
+    
+    lastChar = Right$(aCaption, 1)
+    If lastChar = "^" Or lastChar = "v" Then
+        baseCaption = Left$(aCaption, Len(aCaption) - 2)
+    Else
+        baseCaption = aCaption
+    End If
+
+    For i = LBound(btnCaptions) To UBound(btnCaptions)
+        If StrComp(CStr(btnCaptions(i)), baseCaption, vbTextCompare) = 0 Then
+            idx = i: Exit For
+        End If
+    Next i
+    
+    colName = CStr(sheetColNames(idx))
+    Select Case lastChar
+        Case "^"
+           ws.Buttons(btnNames(idx)).Caption = baseCaption & " v"
+            sort_column colName, 2
+            
+        Case "v"
+            ws.Buttons(btnNames(idx)).Caption = baseCaption & " ^"
+            sort_column colName, 1
+            
+        Case Else
+            For i = LBound(btnNames) To UBound(btnNames)
+                ws.Buttons(btnNames(i)).Caption = IIf(i = idx, btnCaptions(i) & " ^", btnCaptions(i))
+            Next i
+            sort_column colName, 1
+        
+        
+        End Select
+
+    sheet_protection ws, True
+    
+End Sub
+
+
