@@ -1,0 +1,68 @@
+Here is the complete, integrated document combining your slide transcriptions with your conference notes, organized logically by theme and domain.
+posit::conf(2026) Notes & Transcriptions
+1. AI, Agents & Chat Tools
+ * Posit Assistant: Posit's coding and data science agent that operates within RStudio, Positron, and terminal environments across active sessions.
+ * Posit Canvas: Demo workspace displaying data exploration tools, file metadata, time-series plots, depth heatmaps, and conversational queries (ocean_temperature_sensor_data_exploration).
+ * shinychat & Query Chat: LLM chat components and frameworks (shinychat, commons) for bringing conversational AI interfaces into Shiny applications across Python and R.
+ * Databot: Automated agent capabilities for structured query processing and interactive data retrieval.
+ * Human-AI Decision Dynamics:
+   * Slide Title: Adding a human does not guarantee a better result.
+   * Human–AI combinations do not reliably outperform the better of the two.
+   * Approval fatigue can degrade human oversight quality.
+   * Trust, timing, cognitive load, social cues, and information design heavily shape decisions.
+   * Citations: Vaccaro et al. (2024); Crootof et al.
+2. Keynote Sessions
+ * Title: Afternoon Keynote Session: How to be clear when you can't be certain
+ * Speaker: Christine Zhang, New York Times
+ * Time & Location: 4:15 PM – 5:15 PM | Lanier A–F, Level 4
+3. R & Shiny Architecture, Frameworks & Best Practices
+shinyreact Framework
+ * Concept: Shiny UI infrastructure for React-based component rendering while keeping the Shiny server responsible for reactive data computation.
+ * Key Architecture & Benefits:
+   * While offloading UI rendering to React may feel counterintuitive for traditional Shiny workflows, the major benefits extend far beyond cosmetic improvements.
+   * Ecosystem Access: React grants access to a massive ecosystem of sophisticated UI components (e.g., from npm).
+   * Granular Control & State: Provides significantly greater control over complex interactions, state management, and reusable components.
+   * Enterprise Integration: Simplifies embedding custom Shiny components into complex workflows and enterprise web applications.
+Shiny App Architecture & Refactoring Signals
+ * Slide Title: Your app might be rootbound if...
+ * Signs your app needs refactoring:
+   * app.R exceeds 1,000 lines
+   * You keep adding sidebar tabs endlessly
+   * You have duplicated code blocks
+   * Debugging has become noticeably difficult
+Shiny Development & Modular Scale (Boehringer Ingelheim)
+ * Core Metrics: 20 modules • 120 apps • 20,000 monthly visits
+ * What Makes Modularity Work at Scale:
+   * Quality: Modules follow best coding practices and validation concepts.
+   * Sustainability: Shared modules reduce maintenance work and avoid unsupported custom solutions.
+   * Efficiency: Teams save time by using pre-built building blocks.
+   * Consistency: A unified look and feel improves usability and user acceptance.
+   * Flexibility: Modular design allows trial-specific adaptations while keeping standards.
+ * Key Learnings:
+   * Focus on reuse potential: Not every feature belongs in the framework. Repeated custom solutions could indicate a missing module. Direct exchange with app creators is essential to uncover reuse potential.
+   * Standardize interfaces early: Consistent interfaces make modules easier to set up. Retrofitting standards becomes difficult as the framework grows.
+     mod_edish <- function(
+  module_id, lab_dataset_name,
+  arm_var, arm_default_vals,...
+)
+
+   * Adoption takes more than code: Training, documentation, and communication are essential for adoption. Keeping materials aligned with an evolving framework remains a continuous challenge.
+4. Environment & Package Versions
+ * R Version: 4.5.2 (2025-10-31)
+ * Quarto Version: 1.10.15
+| Package | Version | Package | Version | Package | Version | Package | Version |
+|---|---|---|---|---|---|---|---|
+| almanac | 1.0.0 | finetune | 1.3.0 | parsnip | 1.6.0 | scales | 1.4.0 |
+| bonsai | 0.4.1 | Formula | 1.2-5 | patchwork | 1.3.2 | splines2 | 0.5.4 |
+| broom | 1.0.13 | future | 1.70.0 | plotmo | 3.7.0 | stacks | 1.1.1 |
+| brulee | 1.2.0 | ggplot2 | 4.0.3 | plotrix | 3.8-14 | tailor | 0.1.0 |
+| Cubist | 0.6.0 | igraph | 2.2.2 | probably | 1.2.0 | tidymodels | 1.5.0 |
+| CVST | 0.2-3 | important | 0.2.1 | purrr | 1.2.2 | tidyr | 1.3.2 |
+| desirability2 | 0.2.0 | kernlab | 0.9-33 | ranger | 0.18.0 | tune | 2.1.0 |
+| dials | 1.4.4 | kknn | 1.4.1 | RANN | 2.6.2 | workflows | 1.3.0 |
+| dimRed | 0.2.7 | lattice | 0.22-9 | RcppML | 0.3.7.1 | workflowsets | 1.1.1 |
+| dplyr | 1.2.1 | lightgbm | 4.7.0 | recipes | 1.4.0 | xgboost | 3.2.1.1 |
+| DRR | 0.0.4 | lme4 | 2.0-6 | rpart | 4.1.27 | yardstick | 1.4.0 |
+| earth | 5.3.5 | mirai | 2.6.1 | rpart.plot | 3.1.4 |  |  |
+| embed | 1.2.2 | mod... | — | rsample | 1.3.2 |  |  |
+| extrasteps | 0.3.0 | p... | — | rules | 1.0.3 |  |  |
